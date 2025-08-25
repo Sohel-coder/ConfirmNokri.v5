@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Settings — ConfirmNokri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <h2>Settings</h2>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Preferences</h3>
+      <label class="flex">
+        <input id="autoDark" type="checkbox" /> Enable Dark Mode
+      </label>
+      <label class="flex">
+        <input id="toggleNotif" type="checkbox" /> Enable Notifications
+      </label>
+    </div>
+
+    <div class="card">
+      <h3>Account</h3>
+      <form id="changePassForm">
+        <label>Current Password <input id="curPass" type="password" required /></label>
+        <label>New Password <input id="newPass" type="password" required /></label>
+        <button class="btn">Change Password</button>
+      </form>
+      <hr style="margin:1rem 0;opacity:.3">
+      <button id="deleteAccount" class="btn btn-danger">Delete Account</button>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Settings — ConfirmNokri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn btn-accent">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <h2>Settings</h2>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Account Details</h3>
+      <form id="accountForm">
+        <label>Full Name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>Phone <input name="phone" type="tel" placeholder="+91" /></label>
+        <button class="btn btn-primary">Save Account</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Contact & Address</h3>
+      <form id="addressForm">
+        <label>Address <input name="address" placeholder="City, State" /></label>
+        <button class="btn">Save Address</button>
+      </form>
+      <hr style="margin:1rem 0;opacity:.25">
+      <form id="prefForm">
+        <label>Preferred Skills/Keywords <input name="skills" placeholder="e.g., React, Node, HR" /></label>
+        <button class="btn">Save Preferences</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Preferences</h3>
+      <label class="flex"><input id="autoDark" type="checkbox" /> Enable Dark Mode</label>
+      <label class="flex"><input id="toggleNotif" type="checkbox" /> Enable Notifications</label>
+      <form id="subscriptionForm" style="margin-top:.8rem">
+        <label>Plan
+          <select>
+            <option>Free</option>
+            <option selected>Pro (Recommended)</option>
+            <option>Enterprise</option>
+          </select>
+        </label>
+        <button class="btn">Save Subscription</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Security</h3>
+      <form id="changePassForm">
+        <label>Current Password <input id="curPass" type="password" required /></label>
+        <label>New Password <input id="newPass" type="password" required /></label>
+        <button class="btn btn-outline">Change Password</button>
+      </form>
+      <hr style="margin:1rem 0;opacity:.25">
+      <button id="deleteAccount" class="btn btn-danger">Delete Account</button>
+      <button id="logoutBtn" class="btn" style="margin-left:.5rem">Logout</button>
+    </div>
+
+    <div class="card">
+      <h3>Quick Links</h3>
+      <div class="flex">
+        <a class="btn" href="profile.html">My Profile</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <a class="btn" href="jobs.html">Browse Jobs</a>
+        <a class="btn" href="applicants.html">Applicants</a>
+      </div>
+      <p class="muted" style="margin-top:.6rem">For B2B recruiters: manage credits, recruiters, and ATS integrations from your dashboard snapshot.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>
+
+    <div class="card">
+      <h3>Quick Links</h3>
+      <div class="flex">
+        <a class="btn" href="profile.html">My Profile</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <button id="logoutBtn" class="btn btn-outline">Logout</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>

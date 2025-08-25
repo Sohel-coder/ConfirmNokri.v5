@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jobs — ConfirmNokri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn btn-accent">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <div class="card">
+    <div class="list-row">
+      <h2>Latest Openings</h2>
+      <input id="jobSearch" placeholder="Search role, skill, company..." />
+    </div>
+  </div>
+  <div id="jobsList" class="grid"></div>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>

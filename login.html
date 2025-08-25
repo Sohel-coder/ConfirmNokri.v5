@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Login — ConfirmNokri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn btn-accent">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <div class="card">
+    <h2>Login to your account</h2>
+    <form id="loginForm">
+      <label>Email <input type="email" required /></label>
+      <label>Password <input type="password" required /></label>
+      <button class="btn btn-primary">Login</button>
+      <p><a href="javascript:void(0)" id="forgotPassword">Forgot Password?</a></p>
+    </form>
+    <p class="muted">Demo accounts: <br> Seeker — <code>rohit@demo.com / a2c22c@,</code> <br> Recruiter — <code>anita.hr@confirm.com / 123456</code></p>
+  </div>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>

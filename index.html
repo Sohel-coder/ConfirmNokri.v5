@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ConfirmNokri — Find Jobs & Hire Talent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn btn-accent">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <section class="hero slide-up">
+    <h1 style="margin:0 0 .5rem 0">Your next job, faster ⚡</h1>
+    <p class="muted">Purple · Yellow · Red · White theme • Clean UI • Seeker & Recruiter flows • Demo data ready</p>
+    <div class="flex">
+      <a class="btn btn-primary" href="signup.html">Create Account</a>
+      <a class="btn btn-outline" href="jobs.html">Browse Jobs</a>
+      <a class="btn" href="dashboard.html">Go to Dashboard</a>
+    </div>
+  </section>
+
+  <section style="margin-top:var(--gap)">
+    <h2>Trending Jobs</h2>
+    <div id="homeJobs" class="grid grid-3"></div>
+  </section>
+
+  <section style="margin-top:var(--gap)">
+    <h2>Top Companies</h2>
+    <div id="homeCompanies" class="grid grid-3"></div>
+  </section>
+
+  <section style="margin-top:var(--gap)">
+    <h2>What users say</h2>
+    <div id="homeTestimonials" class="grid grid-3"></div>
+  </section>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>

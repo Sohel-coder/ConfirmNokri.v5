@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Profile — ConfirmNokri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html">ConfirmNokri</a>
+    <nav id="navLinks" class="nav"></nav>
+    <div class="header-actions">
+      <button id="themeToggle" class="btn btn-outline">🌙 Dark</button>
+      <button id="shareBtn" class="btn">🔗 Share</button>
+    </div>
+  </div>
+</header>
+
+<main class="container page">
+  <h2>My Profile</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <form id="profileForm">
+        <label>Full Name
+          <input name="name" type="text" required />
+        </label>
+        <label>Email
+          <input name="email" type="email" required />
+        </label>
+        <label>Bio
+          <textarea name="bio" rows="4" placeholder="A short summary about you"></textarea>
+        </label>
+        <label>Resume
+          <input name="resume" type="file" accept=".pdf,.doc,.docx" />
+        </label>
+        <div class="flex">
+          <button class="btn btn-primary">Save Changes</button>
+          <a class="btn" href="settings.html">Settings</a>
+        </div>
+      </form>
+    </div>
+    <div class="card" id="profilePreview"></div>
+  </div>
+</main>
+
+<footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
+</body>
+</html>
