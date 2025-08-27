@@ -5,7 +5,48 @@
   <title>Jobs — ConfirmNokri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <script defer src="jobs.js"></script>
+  <style>
+    .job-card {
+      background: #fff;
+      padding: 16px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .job-card h3 {
+      margin: 0 0 8px 0;
+      color: #6a1b9a;
+    }
+    .job-card p {
+      margin: 4px 0;
+      color: #333;
+    }
+    .job-card button {
+      margin-top: 8px;
+    }
+    #jobsList {
+      display: flex;
+      flex-direction: column; /* Vertical listing */
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
+    .pagination button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #eee;
+    }
+    .pagination button.active {
+      background: #6a1b9a;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -26,8 +67,86 @@
       <input id="jobSearch" placeholder="Search role, skill, company..." />
     </div>
   </div>
-  <div id="jobsList" class="grid"></div>
+  <div id="jobsList"></div>
+  <div id="pagination" class="pagination"></div> <!-- Pagination -->
 </main>
+<script>
+  // Demo Job Data
+const jobs = [];
+const companies = ["Google", "Amazon", "Microsoft", "Infosys", "TCS", "Wipro", "Flipkart", "Accenture", "Capgemini", "IBM"];
+const titles = ["Software Engineer", "Frontend Developer", "Backend Developer", "Data Scientist", "Cloud Engineer", "Business Analyst", "Project Manager", "UI/UX Designer", "DevOps Engineer", "QA Tester"];
+const locations = ["Bangalore", "Hyderabad", "Pune", "Delhi", "Mumbai", "Chennai", "Remote"];
+
+// Generate 100 jobs
+for (let i = 1; i <= 100; i++) {
+  jobs.push({
+    title: titles[Math.floor(Math.random() * titles.length)],
+    company: companies[Math.floor(Math.random() * companies.length)],
+    location: locations[Math.floor(Math.random() * locations.length)],
+    id: i
+  });
+}
+
+const jobsList = document.getElementById("jobsList");
+const paginationDiv = document.getElementById("pagination");
+
+let currentPage = 1;
+const jobsPerPage = 10;
+let filteredJobs = [...jobs]; // initially all jobs
+
+// Render Jobs
+function renderJobs(page = 1) {
+  jobsList.innerHTML = "";
+  const start = (page - 1) * jobsPerPage;
+  const end = start + jobsPerPage;
+
+  filteredJobs.slice(start, end).forEach(job => {
+    const card = document.createElement("div");
+    card.className = "job-card";
+    card.innerHTML = `
+      <h3>${job.title}</h3>
+      <p><strong>Company:</strong> ${job.company}</p>
+      <p><strong>Location:</strong> ${job.location}</p>
+      <button class="btn btn-primary">Apply</button>
+    `;
+    jobsList.appendChild(card);
+  });
+
+  renderPagination();
+}
+
+// Render Pagination Buttons
+function renderPagination() {
+  paginationDiv.innerHTML = "";
+  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.innerText = i;
+    if (i === currentPage) btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderJobs(currentPage);
+    });
+    paginationDiv.appendChild(btn);
+  }
+}
+
+// Search functionality
+document.getElementById("jobSearch").addEventListener("input", (e) => {
+  const filter = e.target.value.toLowerCase();
+  filteredJobs = jobs.filter(j => 
+    j.title.toLowerCase().includes(filter) || 
+    j.company.toLowerCase().includes(filter)
+  );
+  currentPage = 1; // reset to first page on search
+  renderJobs(currentPage);
+});
+
+// Initial Render
+renderJobs(currentPage);
+
+</script>
 
 <footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
 </body>
