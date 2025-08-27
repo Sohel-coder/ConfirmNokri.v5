@@ -6,6 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <style>
+    /* --- Recruiter Slider --- */
+    .recruiter-slider {
+      background: #fff;
+      padding: 15px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 30px 0;
+    }
+    .recruiter-track {
+      display: inline-block;
+      animation: slideLeft 20s linear infinite;
+    }
+    .recruiter {
+      display: inline-block;
+      background: #6a1b9a;
+      color: #fff;
+      padding: 8px 18px;
+      margin: 0 12px;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+    @keyframes slideLeft {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* --- Interview Tips --- */
+    .tips-section {
+      margin: 40px 0;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .tip-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .tip-card h3 {
+      margin-top: 0;
+      color: #6a1b9a;
+    }
+
+    /* --- Upload Intro --- */
+    .upload-section {
+      margin: 40px 0;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .upload-section input {
+      margin-top: 15px;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -22,6 +85,55 @@
 <main class="container page">
   <h2 id="dashTitle" class="fade-in">Dashboard</h2>
   <div id="dashboardContent" class="grid"></div>
+
+  <!-- ✅ Top Recruiters Slider -->
+  <h2 style="margin-top:40px; text-align:center;">🌟 Our Top Recruiters 🌟</h2>
+  <div class="recruiter-slider">
+    <div class="recruiter-track">
+      <div class="recruiter">Google</div>
+      <div class="recruiter">Amazon</div>
+      <div class="recruiter">Microsoft</div>
+      <div class="recruiter">Infosys</div>
+      <div class="recruiter">TCS</div>
+      <div class="recruiter">Wipro</div>
+      <div class="recruiter">Accenture</div>
+      <div class="recruiter">Flipkart</div>
+      <div class="recruiter">IBM</div>
+    </div>
+  </div>
+
+  <!-- ✅ Interview Tips -->
+  <section class="tips-section">
+    <h2 style="text-align:center;">💡 Interview Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3>1. Research the Company</h3>
+        <p>Understand their products, services, and culture before the interview.</p>
+      </div>
+      <div class="tip-card">
+        <h3>2. Dress Professionally</h3>
+        <p>First impressions matter — wear attire suitable for the company culture.</p>
+      </div>
+      <div class="tip-card">
+        <h3>3. Prepare for Common Questions</h3>
+        <p>Practice answers for “Tell me about yourself” and role-specific questions.</p>
+      </div>
+      <div class="tip-card">
+        <h3>4. Ask Smart Questions</h3>
+        <p>Show your curiosity by asking meaningful questions about the role.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Upload Intro -->
+  <section class="upload-section">
+    <h2>📹 Upload Your Intro Video</h2>
+    <p>Stand out by introducing yourself to recruiters with a short video.</p>
+    <input type="file" accept="video/*" />
+    <br><br>
+    <button class="btn btn-accent">Upload</button>
+  </section>
+
 </main>
 
 <footer class="site-footer">© <span id="year"></span> ConfirmNokri</footer>
